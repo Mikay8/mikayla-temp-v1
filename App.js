@@ -1,20 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, useColorScheme, View } from 'react-native';
+import LoginScreen from './screens/LoginScreen';
+import ToggleStartScreen from './screens/ToggleStartScreen';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { theme, darkStyles,lightStyles } from './Theme';
 export default function App() {
+  const colorScheme = useColorScheme();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      {/* <View style={colorScheme==='light'?lightStyles.container: darkStyles.container}> */}
+      <View style={darkStyles.container}>
+        <ToggleStartScreen/>
+      </View>
+    </ThemeProvider>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
