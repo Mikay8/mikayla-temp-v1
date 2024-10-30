@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
-import Login from './LoginScreen';
-import SignUp from './SignUpScreen'
 import Box from '@mui/material/Box';
-import { useEffect } from 'react';
-import StyledBottomNavigation from '../components/StyledBottomNavigation';
-import StyledBottomNavigationAction from '../components/StyledBottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import StyledBottomNavigation from './StyledBottomNavigation';
+import StyledBottomNavigationAction from './StyledBottomNavigationAction';
 
-export default function MobileHomeScreen({contents}) {
+export default function MobileNavigation({contents}) {
     const [value, setValue] = React.useState(0);
   return (
 
