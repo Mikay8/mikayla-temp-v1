@@ -3,6 +3,16 @@ import Box from '@mui/material/Box';
 import StyledBottomNavigation from './StyledBottomNavigation';
 import StyledBottomNavigationAction from './StyledBottomNavigationAction';
 
+{/* <MobileNavigation
+contents={
+  [
+    {key:0,component:<HomeScreen/>,name:"Home",icon:<FavoriteIcon/>},
+    {key:1,component:<SignUpScreen/>,name:"Discover",icon:<FavoriteIcon/>},
+    {key:2,component:<SignUpScreen/>,name:"Settings",icon:<FavoriteIcon/>}
+  ]
+}
+/> */}
+
 export default function MobileNavigation({contents}) {
     const [value, setValue] = React.useState(0);
   return (

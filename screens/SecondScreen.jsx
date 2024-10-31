@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid2';
 import StyledInput from '../components/StyledInput';
 import Typography from '@mui/material/Typography';
 
-export default function HomeScreen() {
+export default function SecondScreen() {
     
   return (
   <Box sx={{ height:'100%', overflowY: 'auto' }}>
@@ -25,7 +25,7 @@ export default function HomeScreen() {
                 textDecoration: 'none',
                 }}
             >
-                HOME
+                Second Screen
             </Typography>
         </Grid>
       </Box>    

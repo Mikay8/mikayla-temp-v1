@@ -18,7 +18,7 @@ const CssButton = styled(Button)({
       backgroundColor: 'transparent'
     }
   });
-export default function StyledInput({...props}) {
+export default function StyledButton({...props}) {
   return (
     <CssButton variant="outlined" {...props}/>
   );
