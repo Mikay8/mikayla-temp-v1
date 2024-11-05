@@ -7,7 +7,9 @@ import FirstScreen from './screens/FirstScreen';
 import SecondScreen from './screens/SecondScreen'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { theme, darkStyles,lightStyles } from './Theme';
-import ResponsiveAppBar from './components/ResponsiveAppBar';
+import WebNav from './components/WebNavigation';
+import MoblieNav from './components/MobileNavigation';
+
 
 export default function App() {
   const colorScheme = useColorScheme();
@@ -15,19 +17,18 @@ export default function App() {
     <ThemeProvider theme={theme}>
       {/* <View style={colorScheme==='light'?lightStyles.container: darkStyles.container}> */}
       <View style={darkStyles.container}>
-      <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<ResponsiveAppBar />}>
-              <Route path="/" element={<HomeScreen />}/>
-              <Route path="/first" element={<FirstScreen />} />
-              <Route path="/second" element={<SecondScreen />} />
-              <Route path="/profile" element={<SecondScreen />} />
-              <Route path="/dashboards" element={<SecondScreen />} />
-              <Route path="/logout" element={<SecondScreen />} />
-              {/* <Route path="*" element={<NoPage />} /> */}
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        <WebNav
+          contents={
+            [
+              {key:0, component:<HomeScreen/>,name:"Home", isSettings:false},
+              {key:1, component:<FirstScreen/>,name:"First", isSettings:false},
+              {key:2, component:<SecondScreen/>,name:"Second", isSettings:false},
+
+              {key:3, component:<HomeScreen/>,name:"Profile", isSettings:true},
+              {key:4, component:<FirstScreen/>,name:"Setting", isSettings:true},
+            ]
+          }
+        />
       </View>
     </ThemeProvider>
     

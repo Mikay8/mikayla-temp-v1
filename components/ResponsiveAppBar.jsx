@@ -12,10 +12,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import TypographyH1 from './TypographyH1';
 
 
 const pages = [{name:'First', href:'/first'}, {name:'Second', href:'/second'}];
-const settings = [{name:'Profile', href:'/profile'}, {name:'Dashboards', href:'/dashboards'}, {name:'Logout', href:'/logout'}];
+const settings = [{name:'Profile', href:'/profile'}, {name:'Dashboard', href:'/dashboard'}, {name:'Logout', href:'/logout'}];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,28 +41,24 @@ function ResponsiveAppBar() {
     <>
     
     
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar position="static"
+      sx={{
+        backgroundColor:'transparent',
+        boxShadow:'none'
+      }}
+    >
+      <Container maxWidth="xl"  >
+        <Toolbar sx={{ backgroundColor:'transparent'}} disableGutters>
           
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
+          <TypographyH1
             sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              display: { xs: 'none', md: 'flex' }
             }}
+            href="/"
+          
           >
             LOGO
-          </Typography>
-
+          </TypographyH1>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -98,24 +95,16 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           
-          <Typography
-            variant="h5"
+          <TypographyH1
             noWrap
-            component="a"
             href="/"
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
           >
             LOGO
-          </Typography>
+          </TypographyH1>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -132,7 +121,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="/assets/favicon.png" />
               </IconButton>
             </Tooltip>
             <Menu

@@ -3,7 +3,7 @@ import {Image, ScrollView} from 'react-native';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import StyledInput from '../components/StyledInput';
-import Typography from '@mui/material/Typography';
+import TypographyH1 from '../components/TypographyH1';
 
 export default function FirstScreen() {
     
@@ -11,22 +11,10 @@ export default function FirstScreen() {
   <Box sx={{ height:'100%', overflowY: 'auto' }}>
       <Box sx={{paddingTop:"25px" }}>
         <Grid size={{ xs: 12 }} display="flex" justifyContent="center" alignItems="center" >
-            <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'white',
-                textDecoration: 'none',
-                }}
+            <TypographyH1
             >
                 First Screen
-            </Typography>
+            </TypographyH1>
         </Grid>
       </Box>    
         <Grid container spacing={2} sx={{}}>
